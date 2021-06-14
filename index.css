@@ -1,0 +1,333 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
+
+body {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  place-items: center;
+  width: 100%;
+  counter-reset: game;
+}
+
+input:checked {
+  counter-increment: game;
+}
+.total-count::after {
+  content: counter(game);
+}
+
+h2, h3 {
+  width: 100%;
+  text-align: center;
+  color: #BF624C;
+  font-family: 'Viaoda Libre', sans-serif;
+}
+
+.phone {
+  background: #CCEFFF;
+  border: 8px solid black;
+  border-radius: 40px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30),
+              0 15px 12px rgba(0,0,0,0.22);
+  height: 600px;
+  position: relative;
+  width: 300px;
+}
+
+.bunny-top-left {
+  bottom: 350px;
+  height: 100px;
+  position: absolute;
+  left: 60px;
+  width: 80px;
+  z-index: 1;
+  animation: movement 2s ease-in-out 0s infinite normal none;
+}
+
+.bunny-top-right {
+  bottom: 350px;
+  height: 100px;
+  position: absolute;
+  right: 60px;
+  width: 80px;
+  z-index: 2;
+  animation: movement 1s ease-in-out 0s infinite normal none;
+
+}
+
+.wall-top {
+  bottom: 0;
+  height: 400px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 220px;
+  z-index: 3;
+}
+
+.bunny-middle {
+  bottom: 250px;
+  height: 100px;
+  left: 15px;
+  position: absolute;
+  width: 80px;
+  z-index: 4;
+  animation: movement 2.5s ease-in-out 2s infinite normal none;
+
+}
+
+.wall-middle {
+  bottom: 0;
+  height: 300px;
+  position: absolute;
+  width: 200px;
+  z-index: 5;
+  
+}
+
+.bunny-bottom {
+  bottom: 150px;
+  height: 100px;
+  position: absolute;
+  right: 30px;
+  width: 80px;
+  z-index: 6;
+  animation: movement 1.8s ease-in-out 3s infinite normal none;
+
+}
+
+.wall-bottom {
+  bottom: 0;
+  height: 200px;
+  position: absolute;
+  right: 0;
+  width: 150px;
+  z-index: 7;
+}
+
+.bush {
+  bottom: 0;
+  height: 100px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 200px;
+  z-index: 8;
+  background: #51AF5E;
+}
+
+.cloud-left {
+  background: #FFFFFF;
+  bottom: 0;
+  height: 80px;
+  position: absolute;
+  width: 75px;
+  z-index: 9;
+  border-radius: 0px 0px 0px 33px;
+}
+
+.cloud-right {
+  background: #FFFFFF;
+  bottom: 0;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  width: 75px;
+  z-index: 10;
+  border-radius: 0px 0px 33px 0px;
+}
+
+.left-ear--outer {
+  background: white;
+  border-radius: 90%;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+
+.left-ear--inner {
+  background: pink;
+  border-radius: 90%;
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  left: 15px;
+  top: 8px;
+}
+
+.right-ear--outer {
+  background: white;
+  border-radius: 90%;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+.right-ear--inner {
+  background: pink;
+  border-radius: 90%;
+  width: 10px;
+  height: 50px;
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}
+
+.head {
+  background: white;
+  border-radius: 50%;
+  height: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+}
+
+.head__eye {
+  background: gray;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 15px;
+
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.head__eye--left {
+  left: 30px;
+}
+
+.head__eye--right {
+  right: 30px;
+}
+
+.walls {
+  background-color: #BF624C;
+  border-radius: 35px;
+}
+
+.grass {
+  background-color: #51AF5E;
+  height: 30px;
+  width: 100%;
+  border-radius: 40px 40px 0px 0px;
+}
+
+.pattern {
+  width: 100%;
+  height: 20px;
+  background-color: #A54A38;
+  background-image:  linear-gradient(135deg, #51AF5E 25%, transparent 25%), linear-gradient(225deg, #51AF5E 25%, transparent 25%), linear-gradient(45deg, #BF624C 25%, transparent 25%), linear-gradient(315deg, #BF624C 25%, #A54A38 25%);
+  background-position:  9.5px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+.white {
+  background: #FFFFFF;
+}
+
+.green {
+  background: #51AF5E ;
+}
+.circule {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.bush .circule:nth-child(1) {
+  top: -50px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.bush .circule:nth-child(2) {
+  top: -10px;
+  left: 0;
+}
+
+.bush .circule:nth-child(3) {
+  top: -10px;
+  right: 0;
+}
+
+.cloud-left .circule:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: -45px;
+  left: 0px;
+} 
+
+.cloud-left .circule:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  top: 0;
+  right: -45px;
+} 
+
+.cloud-right .circule:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: -45px;
+  right: 0px;
+} 
+
+.cloud-right .circule:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: -45px;
+} 
+
+input[type=checkbox] {
+  appearance: none;
+  cursor: pointer;
+  height: 50px;
+  margin: 0;
+  position: relative;
+  top: 0;
+  width: 80px;
+  z-index: 2;
+}
+
+@keyframes movement {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(80px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1, 1);
+  }
+  5% {
+    transform: scale(1, 0.2);
+
+  }
+  10% {
+    transform: scale(1, 1);
+
+  }
+}
+
